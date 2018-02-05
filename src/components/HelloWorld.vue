@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <counter></counter>
+    <Counter />
   </div>
 </template>
 
