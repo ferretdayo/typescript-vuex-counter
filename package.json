@@ -52,6 +52,7 @@
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.0",
     "jest-serializer-vue": "^0.3.0",
+    "jest-unhandled-promise": "^1.0.0",
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -63,7 +64,9 @@
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "ts-jest": "^22.0.3",
     "ts-loader": "^3.2.0",
+    "tslib": "^1.9.0",
     "typescript": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
@@ -77,6 +80,43 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "!src/*.{js,ts}",
+      "!src/**/*.spec.{js,ts}",
+      "!**/*.interface.ts",
+      "!src/test-lib/**/*.ts"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "coverageDirectory": "./coverage",
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>/"
+    ],
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "vue",
+      "js",
+      "json",
+      "jsx"
+    ],
+    "verbose": true,
+    "mapCoverage": true,
+    "transform": {
+      ".js$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.(ts|tsx)?$": "<rootDir>/node_modules/ts-jest/preprocessor",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue"
+    }
   },
   "engines": {
     "node": ">= 4.0.0",
