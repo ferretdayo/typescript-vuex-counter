@@ -2,8 +2,8 @@
   <div id="counter">
     <div>{{msg}}</div>
     <div>{{count}}</div>
-    <button v-on:click="decrement">-1</button>
-    <button v-on:click="increment">+1</button>
+    <button @click="decrement">-1</button>
+    <button @click="increment">+1</button>
     <div>
       <button @click="alertCurrentCount">今のカウントは？</button>
     </div>
@@ -12,6 +12,8 @@
 
 <script lang='ts'>
 import Vue from 'vue'
+import Vuex from 'vuex'
+import { shallow, createLocalVue } from '@vue/test-utils'
 import Component from 'vue-class-component'
 import { mapActions, mapGetters } from 'vuex'
 

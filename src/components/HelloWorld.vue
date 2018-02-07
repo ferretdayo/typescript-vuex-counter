@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h1>カウンター</h1>
     <Counter/>
   </div>
 </template>
