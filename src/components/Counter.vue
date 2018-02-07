@@ -13,7 +13,6 @@
 <script lang='ts'>
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { shallow, createLocalVue } from '@vue/test-utils'
 import Component from 'vue-class-component'
 import { mapActions, mapGetters } from 'vuex'
 
