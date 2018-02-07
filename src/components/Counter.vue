@@ -5,7 +5,7 @@
     <button @click="decrement">-1</button>
     <button @click="increment">+1</button>
     <div>
-      <button @click="alertCurrentCount">今のカウントは？</button>
+      <button class="confirm-btn" @click="alertCurrentCount">今のカウントは？</button>
     </div>
   </div>
 </template>
