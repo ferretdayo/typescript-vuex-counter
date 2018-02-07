@@ -21,9 +21,14 @@ describe('Counter.vue', () => {
 
   it('should render added count', () => {
     const wrapper = shallow(Counter, { store, localVue })
-    const btn = wrapper.findAll('button').at(1)
-    expect(store.getters['getCount']).toEqual(0)
-    btn.trigger('click')
-    expect(store.getters['getCount']).toEqual(1)
+    const count = wrapper.find('.current-count')            // カウントの表示部分
+    const incrementButton = wrapper.findAll('button').at(1) // カウントの+1ボタン部分
+
+    expect(count.text()).toBe('0')
+    incrementButton.trigger('click')
+    expect(count.text()).toBe('1')
+    incrementButton.trigger('click')
+    incrementButton.trigger('click')
+    expect(count.text()).toBe('3')
   })
 })

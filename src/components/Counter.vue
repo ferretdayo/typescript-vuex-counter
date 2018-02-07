@@ -1,7 +1,7 @@
 <template>
   <div id="counter">
     <div>{{msg}}</div>
-    <div>{{count}}</div>
+    <div class="current-count">{{count}}</div>
     <button @click="decrement">-1</button>
     <button @click="increment">+1</button>
     <div>
@@ -12,7 +12,6 @@
 
 <script lang='ts'>
 import Vue from 'vue'
-import Vuex from 'vuex'
 import Component from 'vue-class-component'
 import { mapActions, mapGetters } from 'vuex'
 
